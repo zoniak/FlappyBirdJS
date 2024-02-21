@@ -1,14 +1,14 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const img = new Image();
-img.src = "https://i.ibb.co/Q9yv5Jk/flappy-bird-set.png";
+img.src = "assets/flappy-cat-set.png";
 
 // general settings
 let gamePlaying = false;
 const gravity = 0.3;
-const speed = 3.5;
+const speed = 3;
 const size = [51, 36];
-const jump = -11.5;
+const jump = -9.5;
 const cTenth = canvas.width / 10;
 
 let index = 0,
@@ -152,15 +152,15 @@ const render = () => {
     );
     flyHeight = canvas.height / 2 - size[1] / 2;
     // text accueil
-    ctx.fillText(`Best score : ${bestScore}`, 85, 245);
-    ctx.fillText("Click to play", 90, 535);
+    ctx.fillText(`Mejor game : ${bestScore}`, 85, 245);
+    ctx.fillText("Click para jugar", 90, 535);
     ctx.font = "bold 30px courier";
   }
 
-  document.getElementById("bestScore").innerHTML = `Best : ${bestScore}`;
+  document.getElementById("bestScore").innerHTML = `Mejor : ${bestScore}`;
   document.getElementById(
     "currentScore"
-  ).innerHTML = `Current : ${currentScore}`;
+  ).innerHTML = `Actual : ${currentScore}`;
 
   // tell the browser to perform anim
   window.requestAnimationFrame(render);
